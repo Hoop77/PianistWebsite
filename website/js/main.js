@@ -19,31 +19,28 @@ function viewport()
 
 var circles = [
 	$('#circle-0'),
-	//$('#circle-1'),
-	//$('#circle-2')
+	$('#circle-1'),
+	$('#circle-2')
 ];
 
 var backgrounds = [
 	$('<div class="background background-0"></div>'),
-	//$('<div class="background background-1"></div>'),
-	//$('<div class="background background-2"></div>')
+	$('<div class="background background-1"></div>'),
+	$('<div class="background background-2"></div>')
 ];
 
 for (var i = 0; i < circles.length; ++i)
 {
-	var blurredContent = $('<div id="blurredContent-' + i + '" class="blurredContent"></div>');
-	circles[i].append(blurredContent);
-	blurredContent.append(backgrounds[i]);
+	var blur = $('<div id="blur-' + i + '" class="blur" style="position: absolute;"></div>');
+	circles[i].append(blur);
+	blur.append(backgrounds[i]);
 }
 
-sizeContent();
-positionBlur();
-
-function sizeContent() {
+function sizeBlur() {
 	for (var i = 0; i < circles.length; ++i)
 	{
 		view = viewport();
-		$('#blurredContent- ' + i).css({
+		$('#blur- ' + i).css({
 			'width': view['width'],
 			'height': view['height']
 		});
@@ -54,14 +51,64 @@ function positionBlur() {
 	for (var i = 0; i < circles.length; ++i)
 	{
 		var position = circles[i].position();
-		$('#blurredContent-' + i).css({
+		$('#blur-' + i).css({
 			'left': -position.left,
 			'top': -position.top
 		});
 	}
 }
 
+$(window).on('load', function()
+{
+	sizeBlur();
+	positionBlur();
+
+	var controller = new ScrollMagic.Controller();
+
+	new ScrollMagic.Scene({ 
+		triggerElement: 'body', 
+		triggerHook: 'onLeave',
+		offset: '1000px'
+	})
+	.setClassToggle('#circle-0', "hide")
+	.addTo(controller);
+
+	new ScrollMagic.Scene({ 
+		triggerElement: 'body', 
+		triggerHook: 'onLeave',
+		offset: '1000px'
+	})
+	.setClassToggle('#background-0', 'hide')
+	.addTo(controller);
+
+	new ScrollMagic.Scene({ 
+		triggerElement: 'body', 
+		triggerHook: 'onLeave',
+		offset: '1000px',
+		duration: '2000px'
+	})
+	.setClassToggle('#circle-1', 'show')
+	.addTo(controller);
+
+	new ScrollMagic.Scene({ 
+		triggerElement: 'body', 
+		triggerHook: 'onLeave',
+		offset: '3000px'
+	})
+	.setClassToggle('#background-1', 'hide')
+	.addTo(controller);
+
+	new ScrollMagic.Scene({ 
+		triggerElement: 'body', 
+		triggerHook: 'onLeave',
+		offset: '3000px'
+	})
+	.setClassToggle('#circle-2', 'show')
+	.addTo(controller);
+});
+
 $(window).on('resize', function() {
-	sizeContent();
+	sizeBlur();
 	positionBlur();
 });
+

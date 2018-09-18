@@ -1,10 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+body {
+	height: 6000px;
+}
+
 div, h1, h2, h3, h4, h5, h6, a, a:focus, a:hover, p, ol, ul, li, section, article, table, header, body, footer, tr, th, td{
-	font-family: 'Roboto bold', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
 	padding: 0;
 	margin: 0;
 
 	/* globale Farbe */
 	color: white;
+}
+
+#black-overlay {
+	background: black;
+	position: fixed;
+	z-index: 9999;
+	width: 100vw;
+	height: 100vh;
 }
 
 .background {
@@ -13,54 +28,27 @@ div, h1, h2, h3, h4, h5, h6, a, a:focus, a:hover, p, ol, ul, li, section, articl
 	background-position: center top;
 	height: 100vh;
 	width: 100vw;
-	position: relative;
-}
-
-.circle {
-	border-radius: 50%;
-	text-align: center;
-	overflow: hidden;
-	position: absolute;
+	position: fixed;
+	transform: scale(1.1);
 }
 
 .background-0 { background-image: url("../img/philippbadenhoop.jpg"); }
 .background-1 { background-image: url("../img/wave.jpg"); }
 .background-2 { background-image: url("../img/contactme.jpg"); }
 
-#section-0 .circle {
-	width: 950px;
-	height: 950px;
-	left: -50px;
-	bottom: -100px;
+.icon {
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-#section-0 h1 {
-	margin-top: 300px;
-	margin-bottom: 80px;
-}
+.soundcloud-icon { background-image: url("../img/soundcloud.png"); width: 266px; height: 119px; }
+.youtube-big-icon { background-image: url("../img/youtube-big.png"); width: 287px; height: 116px; }
 
-#section-0 hr {
-	width: 150px;
-	margin-top: 30px;
-}
-
-h1 {
-	font-size: 64pt;
-	line-height: 96pt;
-	letter-spacing: 16pt;
-}
-
-h2 {
-	font-size: 18pt;
-	line-height: 36pt;
-	letter-spacing: 18pt;
-}
-
-hr {
-	height: 2px;
-	background: white;
-	border: none;
-	margin: 0 auto;
+.circle {
+	border-radius: 50%;
+	text-align: center;
+	overflow: hidden;
+	position: fixed;
 }
 
 .circle-content {
@@ -71,8 +59,155 @@ hr {
 	z-index: 1;
 }
 
-.blurredContent {
-	position: absolute;
+#circle-0 {
+	width: 950px;
+	height: 950px;
+	left: -50px;
+	bottom: -100px;
+}
+
+#circle-0 h1 {
+	margin-top: 300px;
+	margin-bottom: 80px;
+}
+
+#circle-0 p {
+	letter-spacing: 18pt;
+}
+
+#circle-0 hr {
+	width: 150px;
+	margin-top: 30px;
+}
+
+#circle-1 {
+	width: 800px;
+	height: 800px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#circle-1 .circle-content {
+	padding-top: 250px;
+}
+
+#circe-1 circle-text {
+	padding-right: 10px;
+}
+
+#circle-1 h1 {
+	text-align: right;
+	letter-spacing: 6pt;
+	line-height: 70pt;
+}
+
+#circle-1 hr {
+	width: 190px;
+	height: 9px;
+	text-align: right;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+#circle-1 .samples-icons {
+	opacity: 0.3;
+}
+
+#soundcloud-samples-icon { margin-top: 15px; }
+#youtube-samples-icon { margin-top: 20px; }
+
+#circle-2 {
+	width: 950px;
+	height: 950px;
+	left: 38.2%;
+	bottom: -100px;
+}
+
+#circle-2 h1 {
+	margin-top: 100px;
+}
+
+#circle-2 br {
+	line-height: 30px;
+}
+
+h1 {
+	font-size: 64pt;
+	line-height: 96pt;
+	letter-spacing: 16pt;
+}
+
+h2 {
+	font-size: 48pt;
+	line-height: 64pt;
+	letter-spacing: 14pt;
+}
+
+h3 {
+	font-size: 32pt;
+	line-height: 48pt;
+	letter-spacing: 12pt;
+}
+
+p {
+	font-size: 18pt;
+	line-height: 36pt;
+	letter-spacing: 10pt;
+}
+
+hr {
+	height: 2px;
+	background: white;
+	border: none;
+	margin: 0 auto;
+}
+
+.blur {
 	filter: blur(20px);
 	-webkit-filter: blur(20px);
+}
+
+.invisible {
+	display: none;
+}
+
+.fade-1s {
+	transition: opacity 1s;
+}
+
+.fade-2s {
+	transition: opacity 1s;
+}
+
+.hide {
+	opacity: 0;
+}
+
+.show {
+	opacity: 1;
+}
+
+.cols {
+	font-size: 0;
+	width: 100%;
+}
+
+.col {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.col-40 {
+	width: 40%;
+}
+
+.col-50 {
+	width: 50%;
+}
+
+.col-60 {
+	width: 60%;
 }
