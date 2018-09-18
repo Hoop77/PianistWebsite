@@ -1,0 +1,78 @@
+div, h1, h2, h3, h4, h5, h6, a, a:focus, a:hover, p, ol, ul, li, section, article, table, header, body, footer, tr, th, td{
+	font-family: 'Roboto bold', sans-serif;
+	padding: 0;
+	margin: 0;
+
+	/* globale Farbe */
+	color: white;
+}
+
+.background {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+}
+
+.circle {
+	border-radius: 50%;
+	text-align: center;
+	overflow: hidden;
+	position: absolute;
+}
+
+.background-0 { background-image: url("../img/philippbadenhoop.jpg"); }
+.background-1 { background-image: url("../img/wave.jpg"); }
+.background-2 { background-image: url("../img/contactme.jpg"); }
+
+#section-0 .circle {
+	width: 950px;
+	height: 950px;
+	left: -50px;
+	bottom: -100px;
+}
+
+#section-0 h1 {
+	margin-top: 300px;
+	margin-bottom: 80px;
+}
+
+#section-0 hr {
+	width: 150px;
+	margin-top: 30px;
+}
+
+h1 {
+	font-size: 64pt;
+	line-height: 96pt;
+	letter-spacing: 16pt;
+}
+
+h2 {
+	font-size: 18pt;
+	line-height: 36pt;
+	letter-spacing: 18pt;
+}
+
+hr {
+	height: 2px;
+	background: white;
+	border: none;
+	margin: 0 auto;
+}
+
+.circle-content {
+	background: rgba(0, 0, 0, 0.15);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.blurredContent {
+	position: absolute;
+	filter: blur(20px);
+	-webkit-filter: blur(20px);
+}

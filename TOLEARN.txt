@@ -1,0 +1,17 @@
+- ScrollMagic
+    https://github.com/janpaepke/ScrollMagic/tree/development#availability
+    https://github.com/janpaepke/ScrollMagic/wiki/Getting-Started-:-How-to-use-ScrollMagic
+    https://www.youtube.com/watch?v=QpedXxC0e5o
+
+- GSAP GreenSock
+    https://github.com/greensock/GreenSock-JS/
+    https://www.youtube.com/watch?v=_42HpXlGpfk&list=PLkEZWD8wbltlSS_d_7tx_H_FBNVro8918
+
+- Website Performance Optimization 
+    https://classroom.udacity.com/courses/ud884
+
+- Rendering Performance
+    https://developers.google.com/web/fundamentals/performance/rendering/
+    
+- SVG
+- Background-Videos

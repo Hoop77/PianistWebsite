@@ -1,0 +1,49 @@
+.keys-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.keys-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: -16.66666%;
+}
+
+.white-keys {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.white-key {
+    display: inline-block;
+    background: white;
+    border-right: 1px solid #959595;
+    width: 16.66666%;
+    height: 100%;
+}
+
+.black-keys {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -4.16666%;
+    white-space: nowrap;
+}
+
+.black-key {
+    display: inline-block;
+    background: black;
+    width: 8.33333%;
+    height: 60%;
+    margin-right: 8.33333%;
+    box-shadow: 0 0 30px #00000088;
+}
+
+.black-key-none {
+    background: transparent;
+    box-shadow: 0 0 0 #00000000;
+}
