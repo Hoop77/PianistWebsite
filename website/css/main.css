@@ -12,6 +12,7 @@
 
 body {
 	height: 6000px;
+	overflow: auto;
 }
 
 #black-overlay {
@@ -50,6 +51,7 @@ body {
 	text-align: center;
 	overflow: hidden;
 	position: fixed;
+	transform: translate(0%, 0%);  /* microsoft edge bug with border radius and overflow hidden */
 }
 
 .circle-content {
@@ -187,9 +189,15 @@ hr {
 	margin: 0 auto;
 }
 
-.blur {
-	filter: blur(20px);
-	-webkit-filter: blur(20px);
+.background-blur {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
 }
 
 .invisible {

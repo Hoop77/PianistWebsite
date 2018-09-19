@@ -31,7 +31,7 @@ var backgrounds = [
 
 for (var i = 0; i < circles.length; ++i)
 {
-	var blur = $('<div id="blur-' + i + '" class="blur" style="position: absolute;"></div>');
+	var blur = $('<div id="blur-' + i + '" class="background-blur"></div>');
 	circles[i].append(blur);
 	blur.append(backgrounds[i]);
 }
