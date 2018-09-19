@@ -93,6 +93,15 @@ $(window).on('load', function()
 	new ScrollMagic.Scene({ 
 		triggerElement: 'body', 
 		triggerHook: 'onLeave',
+		offset: '1000px',
+		duration: '2000px'
+	})
+	.setClassToggle('#circle-1-hbar', 'show')
+	.addTo(controller);
+
+	new ScrollMagic.Scene({ 
+		triggerElement: 'body', 
+		triggerHook: 'onLeave',
 		offset: '3000px'
 	})
 	.setClassToggle('#background-1', 'hide')
