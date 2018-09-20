@@ -71,12 +71,13 @@ body {
 
 #circle-0 h1 {
 	margin-top: 300px;
-	margin-bottom: 80px;
+	margin-bottom: 40px;
 }
 
 #circle-0 p {
 	letter-spacing: 18pt;
 	margin-left: 20px;
+	line-height: 64pt;
 }
 
 #circle-0 hr {
@@ -115,12 +116,8 @@ body {
 	margin-right: 10px;
 }
 
-#circle-1-hbar.hide {
+#circle-1-hbar.off {
 	width: 0;
-}
-
-#circle-1-hbar.show {
-	width: 190px;
 }
 
 #soundcloud-samples-icon { 
@@ -200,10 +197,6 @@ hr {
 	position: absolute;
 }
 
-.invisible {
-	display: none;
-}
-
 .fade-1s {
 	transition: opacity 1s;
 }
@@ -212,14 +205,12 @@ hr {
 	transition: opacity 1s;
 }
 
-.hide {
-	opacity: 0;
+.hidden {
 	visibility: hidden;
 }
 
-.show {
-	opacity: 1;
-	visibility: visible;
+.opacity-0 {
+	opacity: 0;
 }
 
 .cols {

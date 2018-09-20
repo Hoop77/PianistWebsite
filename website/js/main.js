@@ -58,6 +58,32 @@ function positionBlur() {
 	}
 }
 
+function fadeIn(el) {
+	$(el).css({'opacity': 1});
+	show(el);
+}
+
+function fadeOut(el) {
+	$(el).css({'opacity': 0});
+	hide(el);
+}
+
+function show(el) {
+	$(el).removeClass('hidden');
+}
+
+function hide(el) {
+	setTimeout(function() { $(el).addClass('hidden'); }, 1000);
+}
+
+function turnOn(el) {
+	$(el).removeClass('off');
+}
+
+function turnOff(el) {
+	$(el).addClass('off');
+}
+
 $(window).on('load', function()
 {
 	sizeBlur();
@@ -66,53 +92,41 @@ $(window).on('load', function()
 	var controller = new ScrollMagic.Controller();
 
 	new ScrollMagic.Scene({ 
-		triggerElement: 'body', 
-		triggerHook: 'onLeave',
 		offset: '1000px'
 	})
-	.setClassToggle('#circle-0', "hide")
-	.addTo(controller);
-
-	new ScrollMagic.Scene({ 
-		triggerElement: 'body', 
-		triggerHook: 'onLeave',
-		offset: '1000px'
+	.on('enter', function() { 
+		fadeOut('#circle-0');
+		fadeOut('#background-0');
+		fadeIn('#circle-1');
+		show('#background-1');
+		turnOn('#circle-1-hbar');
 	})
-	.setClassToggle('#background-0', 'hide')
-	.addTo(controller);
-
-	new ScrollMagic.Scene({ 
-		triggerElement: 'body', 
-		triggerHook: 'onLeave',
-		offset: '1000px',
-		duration: '2000px'
+	.on('leave', function() {
+		fadeIn('#circle-0');
+		fadeIn('#background-0');
+		fadeOut('#circle-1');
+		hide('#background-1');
+		turnOff('#circle-1-hbar');
 	})
-	.setClassToggle('#circle-1', 'show')
 	.addTo(controller);
 
 	new ScrollMagic.Scene({ 
-		triggerElement: 'body', 
-		triggerHook: 'onLeave',
-		offset: '1000px',
-		duration: '2000px'
-	})
-	.setClassToggle('#circle-1-hbar', 'show')
-	.addTo(controller);
-
-	new ScrollMagic.Scene({ 
-		triggerElement: 'body', 
-		triggerHook: 'onLeave',
 		offset: '3000px'
 	})
-	.setClassToggle('#background-1', 'hide')
-	.addTo(controller);
-
-	new ScrollMagic.Scene({ 
-		triggerElement: 'body', 
-		triggerHook: 'onLeave',
-		offset: '3000px'
+	.on('enter', function() { 
+		fadeOut('#circle-1');
+		fadeOut('#background-1');
+		fadeIn('#circle-2');
+		show('#background-2');
+		turnOff('#circle-1-hbar');
 	})
-	.setClassToggle('#circle-2', 'show')
+	.on('leave', function() {
+		fadeIn('#circle-1');
+		fadeIn('#background-1');
+		fadeOut('#circle-2');
+		hide('#background-2');
+		turnOn('#circle-1-hbar');
+	})
 	.addTo(controller);
 });
 
