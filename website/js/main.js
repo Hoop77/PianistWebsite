@@ -73,7 +73,7 @@ function show(el) {
 }
 
 function hide(el) {
-	setTimeout(function() { $(el).addClass('hidden'); }, 1000);
+	$(el).addClass('hidden');
 }
 
 function turnOn(el) {

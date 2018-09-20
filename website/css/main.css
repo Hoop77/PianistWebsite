@@ -13,15 +13,88 @@
 body {
 	height: 6000px;
 	overflow: auto;
+	background: black;
 }
 
-#black-overlay {
-	background: black;
-	position: fixed;
-	z-index: 9999;
-	width: 100vw;
-	height: 100vh;
+h1 {
+	font-size: 24pt;
+	line-height: 48pt;
+	letter-spacing: 8pt;
+}
+
+h2 {
+	font-size: 18pt;
+	line-height: 42pt;
+	letter-spacing: 8pt;
+}
+
+h3 {
+	font-size: 12pt;
+	line-height: 36pt;
+	letter-spacing: 8pt;
+}
+
+p {
+	font-size: 12pt;
+	line-height: 24pt;
+	letter-spacing: 4pt;
+}
+
+hr {
+	height: 1px;
+	background: white;
+	border: none;
+	margin: 0 auto;
+	width: 100px;
+	margin-top: 24px;
+	transform: translate(-7px, 0);
+}
+
+/* h1 {
+	font-size: 64pt;
+	line-height: 96pt;
+	letter-spacing: 16pt;
+}
+
+h2 {
+	font-size: 48pt;
+	line-height: 64pt;
+	letter-spacing: 14pt;
+}
+
+h3 {
+	font-size: 32pt;
+	line-height: 48pt;
+	letter-spacing: 12pt;
+}
+
+p {
+	font-size: 18pt;
+	line-height: 36pt;
+	letter-spacing: 10pt;
+}
+
+hr {
+	height: 2px;
+	background: white;
+	border: none;
+	margin: 0 auto;
+} */
+
+.fade-1s {
+	transition: opacity 1s;
+}
+
+.fade-2s {
+	transition: opacity 1s;
+}
+
+.hidden {
 	pointer-events: none;
+}
+
+.opacity-0 {
+	opacity: 0;
 }
 
 .background {
@@ -32,6 +105,15 @@ body {
 	width: 100vw;
 	position: fixed;
 	transform: scale(1.1);
+	filter: blur(10px);
+}
+
+.background-blur {
+	filter: blur(20px);
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: none;
 }
 
 .background-0 { background-image: url("../img/philippbadenhoop.jpg"); }
@@ -46,22 +128,71 @@ body {
 .soundcloud-icon { background-image: url("../img/soundcloud.png"); width: 266px; height: 119px; }
 .youtube-big-icon { background-image: url("../img/youtube-big.png"); width: 287px; height: 116px; }
 
+.black-overlay {
+	background: black;
+	opacity: 0.3;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+}
+
 .circle {
-	border-radius: 50%;
+	width: 100vw;
+	height: 100vh;
 	text-align: center;
-	overflow: hidden;
+	overflow: auto;
 	position: fixed;
 	transform: translate(0%, 0%);  /* microsoft edge bug with border radius and overflow hidden */
 }
 
-.circle-content {
-	background: rgba(0, 0, 0, 0.15);
+/* .circle-content {
+	background: rgba(0, 0, 0, 0.3);
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	z-index: 1;
+} */
+
+.circle-content {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	padding-top: 50px;
 }
 
+/* circle-0 */
+
+#circle-0 h3 {
+	margin-top: 20px;
+}
+
+/* circle-1 */
+
+#circle-1 .circle-text {
+	margin-bottom: 20px;
+}
+
+.samples-icon {
+	transform: scale(0.8);
+	opacity: 0.5; 
+	transition: opacity 1s;
+	margin: 0 auto;
+}
+
+.samples-icon:hover {
+	opacity: 1.0;
+}
+
+/* 
+.circle {
+	border-radius: 50%;
+}
+
+*/
+
+/* 
 #circle-0 {
 	width: 950px;
 	height: 950px;
@@ -153,86 +284,4 @@ body {
 
 #circle-2 br {
 	line-height: 30px;
-}
-
-h1 {
-	font-size: 64pt;
-	line-height: 96pt;
-	letter-spacing: 16pt;
-}
-
-h2 {
-	font-size: 48pt;
-	line-height: 64pt;
-	letter-spacing: 14pt;
-}
-
-h3 {
-	font-size: 32pt;
-	line-height: 48pt;
-	letter-spacing: 12pt;
-}
-
-p {
-	font-size: 18pt;
-	line-height: 36pt;
-	letter-spacing: 10pt;
-}
-
-hr {
-	height: 2px;
-	background: white;
-	border: none;
-	margin: 0 auto;
-}
-
-.background-blur {
-    -webkit-filter: blur(20px);
-    -moz-filter: blur(20px);
-    -o-filter: blur(20px);
-    -ms-filter: blur(20px);
-    filter: blur(20px);
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-}
-
-.fade-1s {
-	transition: opacity 1s;
-}
-
-.fade-2s {
-	transition: opacity 1s;
-}
-
-.hidden {
-	visibility: hidden;
-}
-
-.opacity-0 {
-	opacity: 0;
-}
-
-.cols {
-	font-size: 0;
-	width: 100%;
-}
-
-.col {
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	vertical-align: top;
-}
-
-.col-40 {
-	width: 40%;
-}
-
-.col-50 {
-	width: 50%;
-}
-
-.col-60 {
-	width: 60%;
-}
+} */
